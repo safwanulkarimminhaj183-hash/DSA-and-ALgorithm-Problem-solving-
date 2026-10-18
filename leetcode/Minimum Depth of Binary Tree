@@ -1,0 +1,16 @@
+function minDepth(root) {
+if(root==null){
+    return 0;
+}
+if(root.left==null && root.right==null){
+    return 1;
+}
+let left = Number.MAX_SAFE_INTEGER,right = Number.MAX_SAFE_INTEGER;
+if(root.left!==null){
+    left=minDepth(root.left);
+}
+if(root.right!==null){
+    right=minDepth(root.right);
+}
+return 1+Math.min(left,right);
+    

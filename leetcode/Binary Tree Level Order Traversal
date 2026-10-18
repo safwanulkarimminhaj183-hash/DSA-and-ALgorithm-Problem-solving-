@@ -1,0 +1,20 @@
+ function traverse(root,level,res) {
+    if(root==null){
+        return;
+    }
+    if(res.length<=level){
+        res.push([]);
+    }
+    res[level].push(root.val);
+
+    traverse(root.left,level+1,res);
+    traverse(root.right,level+1,res);
+ }
+
+    function levelOrder(root){
+        const res=[];
+
+        traverse(root,0,res);
+        return res;
+    
+};
